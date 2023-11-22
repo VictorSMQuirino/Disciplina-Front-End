@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(123, 180, 228);
+}
+
+.header{
+    background-color: rgb(7, 23, 92);
+    display: grid;
+    grid-area: header;
+    gap: 10px;
+    text-align: center;
+}
+
+.header h1 {
+    font-family: 'Oswald', sans-serif;
+    color: aliceblue;
+}
+
+.container {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 20%;
+    margin-bottom: 10px;
+}
+
+.container img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.container h2 {
+    font-family: 'Nunito', sans-serif;
+}
+
+.container p {
+font-family: 'Playfair Display', serif;
+}
+
+.destaques {
+    text-align: center;
+}
+
+.destaques h2 {
+    text-align: left;
+}
+
+.resultados{
+    width: 400px;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.footer {
+    position: fixed;
+    background-color: rgb(7, 23, 92);
+}
+
+@media (max-width: 500px) {
+    .container {
+        display: inline-block;
+    }
+}
+
+
