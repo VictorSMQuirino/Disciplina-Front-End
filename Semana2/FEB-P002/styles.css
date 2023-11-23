@@ -8,6 +8,7 @@ body {
     grid-area: header;
     gap: 10px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .header h1 {
@@ -17,7 +18,7 @@ body {
 
 .container {
     display: grid;
-    gap: 5px;
+    gap: 10px;
     grid-template-columns: 1fr 1fr 20%;
     margin-bottom: 10px;
 }
@@ -36,23 +37,31 @@ body {
 font-family: 'Playfair Display', serif;
 }
 
-.destaques {
+.grid-itens {
+    background-color: rgb(212, 224, 224);
+}
+
+#destaques {
     text-align: center;
 }
 
-.destaques h2 {
+#destaques h2 {
     text-align: left;
 }
 
-.resultados{
-    width: 400px;
+#resultados{
+    /* width: 400px; */
     grid-column-start: 2;
     grid-column-end: 4;
 }
 
-.footer {
+#footer {
+    top: 52.5em;
+    width: 100%;
     position: fixed;
     background-color: rgb(7, 23, 92);
+    color: white;
+    text-align: center;
 }
 
 @media (max-width: 500px) {
