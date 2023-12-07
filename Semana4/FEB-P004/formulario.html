@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #botao-inserir {
+            width: 100px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="formulario">
+        <div>
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" name="destino" required>
+        </div>
+        <div>
+            <label for="preco">Preço:</label>
+            <input type="text" id="preco" name="preco" required>
+        </div>
+        <div>
+            <label for="taxas">Taxas:</label>
+            <input type="text" id="taxas" name="taxas" required>
+        </div>
+        <div>
+            <label for="parcelamento">Parcelamento:</label>
+            <input type="text" id="parcelamento" name="parcelamento" required>
+        </div>
+        <div>
+            <label for="imagem">URL da Imagem:</label>
+            <input type="text" id="imagem" name="imagem" required>
+        </div>
+
+        <button type="submit" onclick="inserirItem()" id="botao-inserir">Inserir</button>
+    </form>
+    <hr>
+    
+</body>
+</html>
