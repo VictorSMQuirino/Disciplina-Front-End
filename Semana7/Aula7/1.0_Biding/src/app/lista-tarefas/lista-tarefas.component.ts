@@ -17,6 +17,7 @@ export class ListaTarefasComponent {
 
   addTarefa(todo: string) {
     todo = "*---->" + todo;
+    console.log("metodo chamado no filho")
     this.tarefaAdicionada.emit(todo);
   }
 

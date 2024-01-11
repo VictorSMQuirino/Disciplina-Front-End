@@ -9,7 +9,7 @@ export class DestaqueDirective implements OnInit{
   }
 
   ngOnInit(): void {
-    this.elemento.nativeElement.style.backgroundColor = 'pink';
-    this.elemento.nativeElement.style.color = 'green';
+    this.elemento.nativeElement.style.backgroundColor = 'yellow';
+    this.elemento.nativeElement.style.color = 'black';
   }
 }

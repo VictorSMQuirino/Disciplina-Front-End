@@ -6,7 +6,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'todo-app';
+  title = 'todo-app modificada';
   numeroDeTarefas: number = 3;
   tarefas_appComponents = ['Comprar pão', 'ir ao dentista', 'ir ao supermercado'];
 
@@ -15,6 +15,7 @@ export class AppComponent {
   onTarefaAdicionada(todo: string) {
     this.tarefas_appComponents.push(todo);
     this.numeroDeTarefas++;
+    console.log("metodo chamado no pai")
 
     //mudar o do h1
     this.titulo.nativeElement.innerText = "Numero de Tarefas (" + this.numeroDeTarefas + ")";
