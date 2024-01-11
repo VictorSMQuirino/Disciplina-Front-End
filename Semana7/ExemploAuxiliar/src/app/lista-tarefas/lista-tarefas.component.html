@@ -1,0 +1,15 @@
+<div *ngFor="let tarefa of listaTarefas_listaTarefasComponent">
+  <app-item-tarefas [itemTarefa]="tarefa"></app-item-tarefas>
+</div>
+
+<!-- local referencia #-->
+<input #novaTarefa type="text">
+<!-- pegou o value de local referencia #-->
+<button (click)="addTarefa(novaTarefa.value)" #botaoAdicionaTarefa>Adiciona Tarefa</button>
+
+
+<p appDestaque>Directiva destaque</p>
+
+<h1 appDestaque>Vamos para a aula!!!</h1>
+
+<h2 appDestaque>Teste appDestaque</h2>
