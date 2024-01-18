@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-lista-categorias',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ListaCategoriasComponent {
 
+  @Output() nomeCategoria = new EventEmitter<string>();
+
+  public selecionarCategoria(categoria: string): void {
+    this.nomeCategoria.emit(categoria);
+  }
 }

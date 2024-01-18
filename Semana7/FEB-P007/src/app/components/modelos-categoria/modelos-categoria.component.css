@@ -1,0 +1,8 @@
+.lista-modelos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 50px;
+    margin-top: 50px;
+    margin-left: 25px;
+}

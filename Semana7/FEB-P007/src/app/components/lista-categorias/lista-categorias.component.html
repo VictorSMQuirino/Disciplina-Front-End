@@ -1,6 +1,6 @@
 <div class="lista-botoes">
     <button mat-raised-button color="warn">Categorias</button>
-    <button mat-raised-button color="primary">Aviões</button>
-    <button mat-raised-button color="primary">Carros</button>
-    <button mat-raised-button color="primary">Barcos</button>
+    <button (click)="selecionarCategoria('Avioes')" mat-raised-button color="primary">Aviões</button>
+    <button (click)="selecionarCategoria('Carros')" mat-raised-button color="primary">Carros</button>
+    <button (click)="selecionarCategoria('Barcos')" mat-raised-button color="primary">Barcos</button>
 </div>

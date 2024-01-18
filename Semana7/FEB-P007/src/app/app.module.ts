@@ -8,11 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ListaCategoriasComponent } from './components/lista-categorias/lista-categorias.component';
+import { ModelosCategoriaComponent } from './components/modelos-categoria/modelos-categoria.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaCategoriasComponent
+    ListaCategoriasComponent,
+    ModelosCategoriaComponent
   ],
   imports: [
     BrowserModule,
