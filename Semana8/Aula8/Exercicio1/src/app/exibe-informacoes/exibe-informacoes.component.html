@@ -1,0 +1,13 @@
+<div *ngIf="countrysData" class="container mt-3">
+    <h1>Países</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Nome</th>
+            <th>População</th>
+        </tr>
+        <tr *ngFor="let item of countrysData">
+            <td>{{item.name.common}}</td>
+            <td>{{item.population}}</td>
+        </tr>
+    </table>
+</div>
