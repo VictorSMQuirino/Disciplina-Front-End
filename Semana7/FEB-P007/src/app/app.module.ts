@@ -9,12 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ListaCategoriasComponent } from './components/lista-categorias/lista-categorias.component';
 import { ModelosCategoriaComponent } from './components/modelos-categoria/modelos-categoria.component';
+import { CaracteristicasModeloComponent } from './components/caracteristicas-modelo/caracteristicas-modelo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListaCategoriasComponent,
-    ModelosCategoriaComponent
+    ModelosCategoriaComponent,
+    CaracteristicasModeloComponent
   ],
   imports: [
     BrowserModule,

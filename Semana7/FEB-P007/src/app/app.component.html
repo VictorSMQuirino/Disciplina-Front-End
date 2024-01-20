@@ -1,5 +1,6 @@
 <input type="file" id="input-file" (change)="obterJson($event)">
 <div class="container">
-    <app-lista-categorias (nomeCategoria)="setCategoria($event)"></app-lista-categorias>
-    <app-modelos-categoria *ngIf="categoria != ''" [nomeCategoria]="categoria"></app-modelos-categoria>
+    <app-lista-categorias *ngIf="jsonSelecionado" (jsonCategoria)="setCategoriaSelecionada($event)" [json]="jsonSelecionado"></app-lista-categorias>
+    <app-modelos-categoria *ngIf="jsonCategoriaSelecionada" [json]="jsonCategoriaSelecionada"></app-modelos-categoria>
+    <app-caracteristicas-modelo></app-caracteristicas-modelo>
 </div>

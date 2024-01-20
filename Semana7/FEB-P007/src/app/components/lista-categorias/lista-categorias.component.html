@@ -1,6 +1,4 @@
 <div class="lista-botoes">
     <button mat-raised-button color="warn">Categorias</button>
-    <button (click)="selecionarCategoria('Avioes')" mat-raised-button color="primary">Aviões</button>
-    <button (click)="selecionarCategoria('Carros')" mat-raised-button color="primary">Carros</button>
-    <button (click)="selecionarCategoria('Barcos')" mat-raised-button color="primary">Barcos</button>
+    <button *ngFor="let item of categorias" (click)="emitirJsonCategoria(item)" mat-raised-button color="primary">{{item}}</button><br>
 </div>

@@ -1,4 +1,4 @@
 <div class="lista-modelos">
-    <button mat-raised-button color="warn" class="nome-categoria" id="nome-categoria">{{nomeCategoria}}</button>
-    <button mat-raised-button color="primary" class="nome-modelo" *ngFor="let modelo of modelos">{{modelo}}</button>
+    <button mat-raised-button color="warn">{{nomeCategoria}}</button>
+    <button mat-raised-button color="primary" *ngFor="let item of json">{{item.Name}}</button>
 </div>

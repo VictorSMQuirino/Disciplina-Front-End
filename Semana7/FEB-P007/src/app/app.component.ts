@@ -9,31 +9,43 @@ export class AppComponent {
   title = 'FEB-P007';
 
   public categoria: string = '';
-  public jsonSelecionado: string = '';
-  // json = JSON.stringify();
+  public jsonSelecionado: any;
+  public jsonCategoriaSelecionada: any
 
   obterJson(data: any){
-    const selectedFile: File = data.target.files[0];
+    const selectedFile = data.target.files[0];
+
     if(selectedFile) {
       this.lerJson(selectedFile);
     }
   }
 
-  lerJson(file: File) {
+  private lerJson(file: File) {
     const reader = new FileReader();
 
     reader.onload = (e) => {
-      const fileContent = reader.result as string;
-      this.jsonSelecionado = JSON.parse(fileContent);
+      const fileContent = e.target?.result as string;
+      this.converteJson(fileContent);
     }
 
-    // console.log(this.jsonSelecionado);
-    for (let item of this.jsonSelecionado) {
-      console.log("------->" + item);
+    reader.readAsText(file);
+  }
+
+  private converteJson(content: string) {
+    try {
+      this.jsonSelecionado = JSON.parse(content);
+      console.log(this.jsonSelecionado);
+    } catch (error) {
+      console.log(error);
     }
   }
 
   setCategoria(categoria: string) {
     this.categoria = categoria;
+    console.log(`Categoria passada: ${this.categoria}`);
+  }
+
+  setCategoriaSelecionada(json: any) {
+    this.jsonCategoriaSelecionada = json;
   }
 }

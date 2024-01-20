@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-modelos-categoria',
@@ -7,6 +7,6 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 })
 export class ModelosCategoriaComponent {
   @Input() nomeCategoria: string = '';
-
+  @Input() json: any;
   modelos = [];
 }
