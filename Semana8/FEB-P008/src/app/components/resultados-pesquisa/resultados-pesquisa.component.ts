@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { PesquisaWikiService } from '../../services/pesquisa-wiki.service';
 
 @Component({
   selector: 'app-resultados-pesquisa',
@@ -9,4 +8,5 @@ import { PesquisaWikiService } from '../../services/pesquisa-wiki.service';
 export class ResultadosPesquisaComponent {
   @Input() conteudoPesquisado: string = '';
   @Input() resultadoPesquisa: any;
+  @Input() titulo: string = '';
 }

@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class PesquisaWikiService {
 
-  private readonly API_URL = '/api';
+  private readonly API_URL = 'https://pt.wikipedia.org/w/api.php';
 
   constructor(private http: HttpClient) { }
 
   pesquisarNaWiki(termo: string): Observable<any> {
-    const url = `${this.API_URL}?action=query&format=json&prop=info&inprop=url&list=search&srsearch=${termo}`;
+    const url = `${this.API_URL}?origin=*&action=query&format=json&prop=info&inprop=url&list=search&srsearch=${termo}`;
 
     return this.http.get(url);
   }

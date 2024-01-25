@@ -11,14 +11,14 @@ export class AppComponent {
 
   conteudoInput: string = '';
   resultadoPesquisa: any;
+  titulo: string = '';
 
   constructor(private service: PesquisaWikiService) {}
 
   realizarBusca() {
-    console.log(this.conteudoInput)
     this.service.pesquisarNaWiki(this.conteudoInput).subscribe((data) => {
       this.resultadoPesquisa = data;
+      this.titulo = this.conteudoInput;
     });
-    // console.log(this.resultadoPesquisa)
   }
 }
