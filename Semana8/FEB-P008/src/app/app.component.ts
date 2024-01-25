@@ -15,8 +15,10 @@ export class AppComponent {
   constructor(private service: PesquisaWikiService) {}
 
   realizarBusca() {
+    console.log(this.conteudoInput)
     this.service.pesquisarNaWiki(this.conteudoInput).subscribe((data) => {
       this.resultadoPesquisa = data;
     });
+    // console.log(this.resultadoPesquisa)
   }
 }

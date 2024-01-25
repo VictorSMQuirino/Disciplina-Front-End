@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class PesquisaWikiService {
 
-  private readonly API_URL = 'https://pt.wikipedia.org/w/api.php';
+  private readonly API_URL = '/api';
 
   constructor(private http: HttpClient) { }
 
