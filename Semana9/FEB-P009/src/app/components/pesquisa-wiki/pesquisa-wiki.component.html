@@ -1,0 +1,4 @@
+<h1>Consultando a Wiki API</h1>
+<input type="text" [(ngModel)]="conteudoInput">
+<button type="submit" (click)="realizarBusca()">Buscar</button>
+<app-resultados-pesquisa-wiki [conteudoPesquisado]="conteudoInput" [resultadoPesquisa]="resultadoPesquisa" [titulo]="titulo"></app-resultados-pesquisa-wiki>

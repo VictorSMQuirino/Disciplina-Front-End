@@ -1,0 +1,9 @@
+<div *ngIf="resultadoPesquisa">
+    <h2>Resultados para "{{titulo}}"</h2>
+    <div *ngFor="let item of resultadoPesquisa.query.search">
+        <h3>{{item.title}}</h3>
+        <p>{{item.snippet}}</p>
+        <a href="https://pt.wikipedia.org/wiki/{{item.title}}">Leia mais...</a>
+        <br>
+    </div>
+</div>
