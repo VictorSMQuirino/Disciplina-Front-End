@@ -1,0 +1,56 @@
+.container-destinos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.roteiros-viagens {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(187, 170, 235);
+    border-radius: 20px;
+    align-items: center;
+    width: 240px;
+    height: 380px;
+}
+
+.roteiros-viagens div{
+    font-weight: bolder;
+}
+
+.roteiros-viagens div, ul{
+    color: rgb(110, 0, 212);
+}
+
+img {
+    width: 200px;
+    height: 150px;
+    border-radius: 20px;
+    margin: 12px;
+}
+
+button {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 255, 21);
+}
+
+ul {
+    list-style: none;
+}
+
+.roteiro-incluso li::before {
+    content: "✓";
+    margin-right: 5px;;
+}
+
+@media (max-width: 1200px) { 
+    .container-destinos {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

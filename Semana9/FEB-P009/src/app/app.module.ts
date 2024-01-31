@@ -15,6 +15,7 @@ import { NoticiasUescAngularComponent } from './components/noticias-uesc-angular
 import { DestaqueUescAngularComponent } from './components/destaque-uesc-angular/destaque-uesc-angular.component';
 import { ServicosUescAngularComponent } from './components/servicos-uesc-angular/servicos-uesc-angular.component';
 import { ResultadosUescAngularComponent } from './components/resultados-uesc-angular/resultados-uesc-angular.component';
+import { AgenciaTuristicaComponent } from './components/agencia-turistica/agencia-turistica.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ResultadosUescAngularComponent } from './components/resultados-uesc-ang
     NoticiasUescAngularComponent,
     DestaqueUescAngularComponent,
     ServicosUescAngularComponent,
-    ResultadosUescAngularComponent
+    ResultadosUescAngularComponent,
+    AgenciaTuristicaComponent
   ],
   imports: [
     BrowserModule,
