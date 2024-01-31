@@ -13,6 +13,8 @@ import { UescAngularComponent } from './components/uesc-angular/uesc-angular.com
 import { MenuUescAngularComponent } from './components/menu-uesc-angular/menu-uesc-angular.component';
 import { NoticiasUescAngularComponent } from './components/noticias-uesc-angular/noticias-uesc-angular.component';
 import { DestaqueUescAngularComponent } from './components/destaque-uesc-angular/destaque-uesc-angular.component';
+import { ServicosUescAngularComponent } from './components/servicos-uesc-angular/servicos-uesc-angular.component';
+import { ResultadosUescAngularComponent } from './components/resultados-uesc-angular/resultados-uesc-angular.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { DestaqueUescAngularComponent } from './components/destaque-uesc-angular
     UescAngularComponent,
     MenuUescAngularComponent,
     NoticiasUescAngularComponent,
-    DestaqueUescAngularComponent
+    DestaqueUescAngularComponent,
+    ServicosUescAngularComponent,
+    ResultadosUescAngularComponent
   ],
   imports: [
     BrowserModule,
