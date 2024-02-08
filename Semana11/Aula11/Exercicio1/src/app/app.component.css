@@ -1,0 +1,18 @@
+.container {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    width: 50px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+}

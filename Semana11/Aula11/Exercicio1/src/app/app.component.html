@@ -1,0 +1,14 @@
+<div class="container">
+  <form class="form" id="form" (ngSubmit)="onSubmit(formulario)" #formulario="ngForm">
+  <label>
+    Email:
+    <input type="email" name="email" ngModel required email="true" #email="ngModel">
+    <span *ngIf="!email.valid && email.touched">Email inválido!</span>
+    </label>
+    <label>
+      Senha:
+      <input type="password" name="senha" ngModel>
+    </label>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
