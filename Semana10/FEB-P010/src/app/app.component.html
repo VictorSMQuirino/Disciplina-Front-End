@@ -1,5 +1,11 @@
-<input type="file" name="" id="">
-
-<div>
-    {{jsonData}}
+<div class="container mt-5">
+  <h1 class="text-center">Veículos</h1>
+  <hr>
+    <div class="botoes">
+        <button (click)="setCategory('Avioes')" class="btn btn-primary">Aviões</button>
+        <button (click)="setCategory('Carros')" class="btn btn-primary">Carros</button>
+        <button (click)="setCategory('Barcos')" class="btn btn-primary">Barcos</button>
+    </div>
+    <app-modelos-categoria *ngIf="categoria" [nomeCategoria]="categoria" (nomeModelo)="setnomeModelo($event)"></app-modelos-categoria>
+    <app-caracteristicas-modelo [nomeModelo]="nomeModelo" [categoria]="categoria"></app-caracteristicas-modelo>
 </div>

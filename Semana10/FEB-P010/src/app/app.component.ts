@@ -1,25 +1,28 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ObterInformacoesVeiculosService} from "./services/obter-informacoes-veiculos.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit{
   title = 'FEB-P010';
+  json: any;
+  categoria: string = '';
+  nomeModelo: string = '';
 
-  jsonData: any;
+  constructor(private service: ObterInformacoesVeiculosService) { }
 
-  constructor(private http: HttpClient) {}
-  
   ngOnInit(): void {
-    this.getJsonData();
+    this.service.loadJson();
   }
 
-  getJsonData(){
-    this.http.get('assets/veiculos.json').subscribe((data) => {
-      this.jsonData = data;
-    })
+  setCategory(categoria: string): void {
+    this.categoria = categoria;
+  }
+
+  setnomeModelo(nomeModelo: string): void {
+    this.nomeModelo = nomeModelo;
   }
 }
