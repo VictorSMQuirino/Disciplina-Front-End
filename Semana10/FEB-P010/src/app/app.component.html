@@ -2,10 +2,8 @@
   <h1 class="text-center">Veículos</h1>
   <hr>
     <div class="botoes">
-        <button (click)="setCategory('Avioes')" class="btn btn-primary">Aviões</button>
-        <button (click)="setCategory('Carros')" class="btn btn-primary">Carros</button>
-        <button (click)="setCategory('Barcos')" class="btn btn-primary">Barcos</button>
+      <button *ngFor="let categoria of categorias" (click)="selecionarCategoria(categoria)" class="btn btn-primary">{{categoria}}</button>
     </div>
-    <app-modelos-categoria *ngIf="categoria" [nomeCategoria]="categoria" (nomeModelo)="setnomeModelo($event)"></app-modelos-categoria>
-    <app-caracteristicas-modelo [nomeModelo]="nomeModelo" [categoria]="categoria"></app-caracteristicas-modelo>
+    <app-modelos-categoria *ngIf="categoria" [nomeCategoria]="categoria" (nomeVeiculo)="setnomeModelo($event)"></app-modelos-categoria>
+    <app-caracteristicas-modelo *ngIf="categoria && nomeModelo" [nomeModelo]="nomeModelo" [categoria]="categoria"></app-caracteristicas-modelo>
 </div>

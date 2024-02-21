@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   json: any;
   categoria: string = '';
   nomeModelo: string = '';
+  categorias = ['Avioes', 'Carros', 'Barcos'];
 
   constructor(private service: ObterInformacoesVeiculosService) { }
 
@@ -18,8 +19,10 @@ export class AppComponent implements OnInit{
     this.service.loadJson();
   }
 
-  setCategory(categoria: string): void {
+  selecionarCategoria(categoria: string) {
     this.categoria = categoria;
+    this.nomeModelo = '';
+    this.service.loadJsonCategoria(categoria);
   }
 
   setnomeModelo(nomeModelo: string): void {

@@ -7,8 +7,10 @@ import {Subject} from 'rxjs';
 })
 export class ObterInformacoesVeiculosService {
 
-  private subject = new Subject<any>();
-  observable = this.subject.asObservable();
+  private subjectVeiculos = new Subject<any>();
+  private subjectVeiculo = new Subject<any>();
+  observableVeiculos = this.subjectVeiculos.asObservable();
+  observableVeiculo = this.subjectVeiculo.asObservable();
   private veiculos: string = '/assets/veiculos.json';
   private json: any;
 
@@ -22,7 +24,7 @@ export class ObterInformacoesVeiculosService {
 
   loadJsonCategoria(categoria: string) {
     if(this.json && this.json[categoria]) {
-      this.subject.next(this.json[categoria]);
+      this.subjectVeiculos.next(this.json[categoria]);
     }
   }
 
@@ -30,7 +32,7 @@ export class ObterInformacoesVeiculosService {
     if(this.json && this.json[categoria]) {
       let item = this.json[categoria].find((i: any) => i.Name === modelo);
       if(item) {
-        this.subject.next(item);
+        this.subjectVeiculo.next(item);
       }
     }
   }

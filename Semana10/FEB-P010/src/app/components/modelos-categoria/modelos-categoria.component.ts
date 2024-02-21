@@ -8,19 +8,21 @@ import { ObterInformacoesVeiculosService } from '../../services/obter-informacoe
 })
 export class ModelosCategoriaComponent implements OnInit{
   @Input() nomeCategoria: string = '';
-  json: any;
-  @Output() nomeModelo = new EventEmitter<string>();
+  // json: any;
+  @Output() nomeVeiculo = new EventEmitter<string>();
+  veiculos: any[] = [];
 
   constructor(private service: ObterInformacoesVeiculosService) { }
 
   ngOnInit(): void {
-    this.service.observable.subscribe(json => {
-      this.json = json;
-    });
+    this.service.observableVeiculos.subscribe(veiculos => {
+      this.veiculos = veiculos;
+    })
     this.service.loadJsonCategoria(this.nomeCategoria);
   }
 
-  emitModelo(modelo: string){
-    this.nomeModelo.emit(modelo);
+  selecionarVeiculo(veiculo: any) {
+    this.service.loadModelo(this.nomeCategoria, veiculo.Name);
+    this.nomeVeiculo.emit(veiculo.Name);
   }
 }

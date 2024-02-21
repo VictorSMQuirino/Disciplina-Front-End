@@ -1,5 +1,5 @@
-<div *ngIf="nomeCategoria" class="container">
+<div class="container">
   <div class="botoes mt-5">
-    <button *ngFor="let item of json" (click)="emitModelo(item.Name)" class="btn btn-primary">{{item.Name}}</button>
+    <button *ngFor="let veiculo of veiculos" (click)="selecionarVeiculo(veiculo)" class="btn btn-primary">{{veiculo.Name}}</button>
   </div>
 </div>

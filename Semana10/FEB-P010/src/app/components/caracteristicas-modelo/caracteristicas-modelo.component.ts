@@ -8,17 +8,16 @@ import {ObterInformacoesVeiculosService} from "../../services/obter-informacoes-
 })
 export class CaracteristicasModeloComponent implements OnInit {
 
-  json: any;
+  veiculo: any;
   @Input() nomeModelo: string = '';
   @Input() categoria: string = '';
 
   constructor(private service: ObterInformacoesVeiculosService) { }
 
   ngOnInit(): void {
-    this.service.observable.subscribe(json => {
-      this.json = json;
+    this.service.observableVeiculo.subscribe(veiculo => {
+      this.veiculo = veiculo;
     });
     this.service.loadModelo(this.categoria, this.nomeModelo);
   }
-
 }
