@@ -20,4 +20,8 @@ export class CaracteristicasModeloComponent implements OnInit {
     });
     this.service.loadModelo(this.categoria, this.nomeModelo);
   }
+
+  pushVeiculo() {
+    this.service.addVeiculo(this.veiculo);
+  }
 }

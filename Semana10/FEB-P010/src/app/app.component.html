@@ -1,9 +1,10 @@
 <div class="container mt-5">
   <h1 class="text-center">Veículos</h1>
   <hr>
-    <div class="botoes">
-      <button *ngFor="let categoria of categorias" (click)="selecionarCategoria(categoria)" class="btn btn-primary">{{categoria}}</button>
-    </div>
-    <app-modelos-categoria *ngIf="categoria" [nomeCategoria]="categoria" (nomeVeiculo)="setnomeModelo($event)"></app-modelos-categoria>
-    <app-caracteristicas-modelo *ngIf="categoria && nomeModelo" [nomeModelo]="nomeModelo" [categoria]="categoria"></app-caracteristicas-modelo>
+  <div class="botoes">
+    <button *ngFor="let categoria of categorias" (click)="selecionarCategoria(categoria)" class="btn btn-primary">{{categoria}}</button>
+  </div>
+  <app-modelos-categoria *ngIf="categoria" [nomeCategoria]="categoria" (nomeVeiculo)="setnomeModelo($event)"></app-modelos-categoria>
+  <app-caracteristicas-modelo *ngIf="categoria && nomeModelo" [nomeModelo]="nomeModelo" [categoria]="categoria"></app-caracteristicas-modelo>
+  <app-tabela-veiculos *ngIf="categoria && nomeModelo"></app-tabela-veiculos>
 </div>

@@ -1,5 +1,5 @@
 <div *ngIf="veiculo" class="container botoes mt-5">
-  <button class="btn btn-danger">{{veiculo.Name}}</button>
+  <button (click)="pushVeiculo()" class="btn btn-danger">{{veiculo.Name}}</button>
   <button class="btn btn-primary">{{veiculo.Model}}</button>
   <button class="btn btn-primary">{{veiculo.Engine}}</button>
   <button class="btn btn-primary">{{veiculo.NumberOfPassengers}}</button>

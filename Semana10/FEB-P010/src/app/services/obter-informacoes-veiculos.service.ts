@@ -9,10 +9,13 @@ export class ObterInformacoesVeiculosService {
 
   private subjectVeiculos = new Subject<any>();
   private subjectVeiculo = new Subject<any>();
+  private subjectVeiculosSelecionados = new Subject<any>();
   observableVeiculos = this.subjectVeiculos.asObservable();
   observableVeiculo = this.subjectVeiculo.asObservable();
+  obeservableVeiculosSelecionados = this.subjectVeiculosSelecionados.asObservable();
   private veiculos: string = '/assets/veiculos.json';
   private json: any;
+  private listaVeiculos: any[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -34,6 +37,16 @@ export class ObterInformacoesVeiculosService {
       if(item) {
         this.subjectVeiculo.next(item);
       }
+    }
+  }
+
+  addVeiculo(veiculo: any): void {
+    this.listaVeiculos.push(veiculo);
+  }
+
+  loadLista(): void {
+    if(this.json) {
+      this.subjectVeiculosSelecionados.next(this.listaVeiculos);
     }
   }
 }

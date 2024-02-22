@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Model</th>
+        <th>Engine</th>
+        <th>Number Of Passengers</th>
+        <th>Autonomia</th>
+        <th>Alcance</th>
+        <th>Teto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <div *ngFor="let veiculo of listaVeiculos">
+        <tr>
+          <td>{{veiculo.Name}}</td>
+          <td>{{veiculo.Model}}</td>
+          <td>{{veiculo.Engine}}</td>
+          <td>{{veiculo.NumberOfPassengers}}</td>
+          <td>{{veiculo.Autonomia}}</td>
+          <td>{{veiculo.Alcance}}</td>
+          <td>{{veiculo.Teto}}</td>
+        </tr>
+      </div>
+    </tbody>
+  </table>
+</div>

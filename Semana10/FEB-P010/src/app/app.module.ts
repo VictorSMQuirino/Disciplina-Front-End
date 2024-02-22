@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModelosCategoriaComponent } from './components/modelos-categoria/modelos-categoria.component';
 import { CaracteristicasModeloComponent } from './components/caracteristicas-modelo/caracteristicas-modelo.component';
+import { TabelaVeiculosComponent } from './components/tabela-veiculos/tabela-veiculos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModelosCategoriaComponent,
-    CaracteristicasModeloComponent
+    CaracteristicasModeloComponent,
+    TabelaVeiculosComponent
   ],
   imports: [
     BrowserModule,
