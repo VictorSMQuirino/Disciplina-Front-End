@@ -14,6 +14,7 @@ export class TabelaVeiculosComponent implements OnInit{
   ngOnInit(): void {
     this.service.obeservableVeiculosSelecionados.subscribe(veiculos => {
       this.listaVeiculos = veiculos;
-    })
+    });
+    this.service.loadLista();
   }
 }

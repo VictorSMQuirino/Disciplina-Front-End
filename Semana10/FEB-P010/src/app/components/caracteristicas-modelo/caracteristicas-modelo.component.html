@@ -1,9 +1,10 @@
 <div *ngIf="veiculo" class="container botoes mt-5">
-  <button (click)="pushVeiculo()" class="btn btn-danger">{{veiculo.Name}}</button>
+  <button class="btn btn-danger">{{veiculo.Name}}</button>
   <button class="btn btn-primary">{{veiculo.Model}}</button>
   <button class="btn btn-primary">{{veiculo.Engine}}</button>
   <button class="btn btn-primary">{{veiculo.NumberOfPassengers}}</button>
   <button class="btn btn-primary">{{veiculo.Autonomia}}</button>
   <button class="btn btn-primary">{{veiculo.Alcance}}</button>
   <button *ngIf="categoria === 'Avioes'" class="btn btn-primary">{{veiculo.Teto}}</button>
+  <button (click)="pushVeiculo()" class="btn btn-success">Adicionar</button>
 </div>
