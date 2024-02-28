@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormService } from '../../services/form-service.service';
 
 @Component({
   selector: 'app-form-usuario',
@@ -8,8 +9,9 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, Validators }
 })
 export class FormUsuarioComponent {
   form: FormGroup;
+  usuario: any;
 
-  constructor() {
+  constructor(private formService: FormService) {
     this.form = new FormGroup({
       'name': new FormControl(null, [Validators.required, Validators.maxLength(12), this.noSpacesValidator.bind(this)]),
       'email': new FormControl(null, [Validators.required, Validators.email]),
@@ -77,11 +79,55 @@ export class FormUsuarioComponent {
 
   onSubmit() {
     if(this.form.valid) {
-      const formValues = this.form.value;
-      const json = JSON.stringify(formValues);
-      console.log(json);
+      this.usuario = this.formService.getUsuario();
     } else {
       console.log('Formulário inválido', this.form.errors);
     }
+  }
+
+  onNameChange(event: any) {
+    let name = event.target ? event.target.value : null;
+    this.formService.setName(name);
+    console.log(this.formService.getName());
+  }
+
+  onEmailChange(event: any) {
+    let email = event.target ? event.target.value : null;
+    this.formService.setEmail(email);
+  }
+
+  onPasswordChange(event: any) {
+    let password = event.target ? event.target.value : null;
+    this.formService.setPassword(password);
+  }
+
+  onCompleteNameChange(event: any) {
+    let completeName = event.target ? event.target.value : null;
+    this.formService.setCompleteName(completeName);
+  }
+
+  onPhoneNumberChange(event: any) {
+    let phoneNumber = event.target ? event.target.value : null;
+    this.formService.setPhoneNumber(phoneNumber);
+  }
+
+  onAddressesChange(event: any) {
+    let address = event.target ? event.target.value : null;
+    this.formService.setAddress(address);
+  }
+
+  onBirthDateChange(event: any) {
+    let birthDate = event.target ? event.target.value : null;
+    this.formService.setBirthDate(birthDate);
+  }
+
+  onGenderChange(event: any) {
+    let gender = event.value;
+    this.formService.setGender(gender);
+  }
+
+  onProfessionChange(event: any) {
+    let profession = event.value;
+    this.formService.setProfession(profession);
   }
 }
