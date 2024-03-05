@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService } from '../../services/database.service';
 import { PetAssistance } from '../../models/petAssistance.model';
@@ -11,7 +12,7 @@ export class PetAssistanceListComponent implements OnInit {
 
   petAssistances: PetAssistance[] = [];
 
-  constructor(private dbService: DatabaseService) { }
+  constructor(private dbService: DatabaseService, private router: Router) { }
   
   ngOnInit(): void {
     this.dbService.getPetAssistances().subscribe(response => {
@@ -20,4 +21,12 @@ export class PetAssistanceListComponent implements OnInit {
     })
   }
 
+  deletePetAssistance(id: string) {
+    this.dbService.deletePetAssistance(id).subscribe(response => {
+      // console.log(response);
+      // this.router.navigate(['listar']);
+      alert('Atendimento excluído com sucesso!');
+      this.router.navigate(['home']);
+    })
+  }
 }

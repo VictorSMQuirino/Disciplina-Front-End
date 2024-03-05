@@ -1,0 +1,30 @@
+<form [formGroup]="petAssistanceForm" (ngSubmit)="submitPetAssistanceForm()" style="width: 500px;">
+    <legend>Cadastro de Atendimento</legend>
+    <div class="mb-3">
+        <label for="name">Nome:</label>
+        <input type="text" class="form-control" placeholder="Nome do pet" id="name" formControlName="PetName">
+        <span class="text-danger" *ngIf="petAssistanceForm.get('PetName')?.errors && petAssistanceForm.get('PetName')?.touched">O nome do pet é obrigatório!</span>
+    </div>
+    <div class="mb-3">
+        <label for="breed">Espécie:</label>
+        <input type="text" class="form-control" placeholder="Espécie do pet" id="breed" formControlName="PetBreed">
+        <span class="text-danger" *ngIf="petAssistanceForm.get('PetBreed')?.errors && petAssistanceForm.get('PetBreed')?.touched">A Espécie do pet é obrigatória!</span>
+    </div>
+    <div class="mb-3">
+        <label for="tutor">Tutor:</label>
+        <input type="text" class="form-control" placeholder="Nome do tutor" id="tutor" formControlName="TutorName">
+        <span class="text-danger" *ngIf="petAssistanceForm.get('TutorName')?.errors && petAssistanceForm.get('TutorName')?.touched">O nome do tutor do pet é obrigatório!</span>
+    </div>
+    <div class="mb-3">
+        <label for="age">Idade:</label>
+        <input type="number" class="form-control" placeholder="Idade do pet" id="age" formControlName="PetAge">
+        <span class="text-danger" *ngIf="petAssistanceForm.get('PetAge')?.errors?.['required'] && petAssistanceForm.get('PetAge')?.touched">A idade do pet é obrigatória!</span>
+        <span class="text-danger" *ngIf="petAssistanceForm.get('PetAge')?.errors?.['pattern'] && petAssistanceForm.get('PetAge')?.touched">A idade do pet deve conter apenas números!</span>
+    </div>
+    <div class="mb-3">
+        <label for="hour">Horário do atendimento:</label>
+        <input type="time" class="form-control" id="hour" formControlName="Hour">
+        <span class="text-danger" *ngIf="petAssistanceForm.get('Hour')?.errors && petAssistanceForm.get('Hour')?.touched">O horário do atendimento é obrigatório!</span>
+    </div>
+    <button type="submit" class="btn btn-success">Salvar</button>
+</form>

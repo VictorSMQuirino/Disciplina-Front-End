@@ -43,15 +43,21 @@ export class DatabaseService {
     )
   }
 
-  putPetAssistance(petId: string, petData: {
+  getPetAssistance(petAssistanceId: string) {
+    return this.http.get<PetAssistance>(`https://feb-p013-1ba46-default-rtdb.firebaseio.com/pets/${petAssistanceId}.json`)
+  }
+
+  putPetAssistance(petAssistanceId: string, petData: {
     petName: string,
     petBreed: string,
     tutorName: string,
     petAge: string,
     hour: string
   }) {
-    return this.http.put(`https://feb-p013-1ba46-default-rtdb.firebaseio.com/pets/${petId}.json`, petData, { observe: 'response'});
+    return this.http.put(`https://feb-p013-1ba46-default-rtdb.firebaseio.com/pets/${petAssistanceId}.json`, petData, { observe: 'response'});
   }
 
-
+  deletePetAssistance(petAssistanceId: string) {
+    return this.http.delete(`https://feb-p013-1ba46-default-rtdb.firebaseio.com/pets/${petAssistanceId}.json`);
+  }
 }

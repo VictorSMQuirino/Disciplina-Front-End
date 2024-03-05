@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatabaseService } from '../../services/database.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pet-form',
@@ -11,7 +12,7 @@ export class PetFormComponent implements OnInit {
   
   petFormGroup!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private dbService: DatabaseService) { }
+  constructor(private formBuilder: FormBuilder, private dbService: DatabaseService, private router: Router) { }
 
   ngOnInit(): void {
     this.petFormGroup = this.formBuilder.group({
@@ -31,5 +32,6 @@ export class PetFormComponent implements OnInit {
     console.log(this.petFormGroup.value);
     this.dbService.postPetAssistance(this.petFormGroup.value);
     this.petFormGroup.reset();
+    this.router.navigate(['listar']);
   }
 }

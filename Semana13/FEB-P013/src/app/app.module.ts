@@ -10,13 +10,15 @@ import { PetFormComponent } from './components/pet-form/pet-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PetAssistanceListComponent } from './components/pet-assistance-list/pet-assistance-list.component';
+import { EditPetAssistanceComponent } from './components/edit-pet-assistance/edit-pet-assistance.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PetFormComponent,
-    PetAssistanceListComponent
+    PetAssistanceListComponent,
+    EditPetAssistanceComponent
   ],
   imports: [
     BrowserModule,
