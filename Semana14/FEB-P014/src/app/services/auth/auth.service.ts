@@ -10,6 +10,7 @@ import { User } from '../../models/User.model';
 export class AuthService {
 
   user = new BehaviorSubject<User>(new User('', '', '', new Date()));
+  isAutenticated: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -53,6 +54,7 @@ export class AuthService {
 
         this.user.next(newUser);
         localStorage.setItem('userData', JSON.stringify(newUser));
+        this.isAutenticated = true;
       })
     )
   }
@@ -83,5 +85,6 @@ export class AuthService {
 
   logout() {
     this.user.next(new User('', '', '', new Date()));
+    this.isAutenticated = false;
   }
 }
