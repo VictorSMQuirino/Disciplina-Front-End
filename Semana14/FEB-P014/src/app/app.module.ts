@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PetAssistanceListComponent } from './components/pet-assistance-list/pet-assistance-list.component';
 import { EditPetAssistanceComponent } from './components/edit-pet-assistance/edit-pet-assistance.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EditPetAssistanceComponent } from './components/edit-pet-assistance/edi
     HomeComponent,
     PetFormComponent,
     PetAssistanceListComponent,
-    EditPetAssistanceComponent
+    EditPetAssistanceComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
