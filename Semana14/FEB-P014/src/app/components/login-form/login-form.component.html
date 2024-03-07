@@ -1,5 +1,6 @@
 <form [formGroup]="loginFormGroup" (ngSubmit)="submitLoginForm()">
     <legend id="legend" class="text-center mt-5">Login</legend>
+    <p class="text-danger text-center" *ngIf="loginInvalido == true && formSubmetido == true">Email ou senha incorretos!</p>
     <div class="inputs">
         <div class="form-floating mb-3 mt-3">
             <input type="email" class="form-control" id="email" formControlName="Email">
